@@ -6,6 +6,12 @@ Suggestions and improvements are anyway welcome.
 For more advanced stuff you might want to try something more powerful,
 like Python, Perl, R or [calc](http://www.isthe.com/chongo/tech/comp/calc/).
 
+###Usage
+Clone the repo, then in your bash script add
+```
+source /path/to/bashmathlib/mathlib.sh
+```
+
 ###List of functions
 
 * `abs` computes the absolute value of a number
