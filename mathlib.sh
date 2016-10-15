@@ -8,5 +8,5 @@ DIR="$DIR/lib"
 . "$DIR/explog.sh"
 . "$DIR/vectors.sh"
 . "$DIR/vecnum.sh"
-
+. "$DIR/stats.sh"
 

@@ -4,7 +4,8 @@
 # len 2 3 4 5
 # alias: length
 len () {
-    echo $@ | wc -w
+    v=($@)
+    echo ${#v[@]}
 }
 length () {
     len $@
