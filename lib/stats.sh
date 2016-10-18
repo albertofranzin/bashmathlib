@@ -56,3 +56,19 @@ median () {
     echo $m
 }
 
+# colmean
+# taskes as input a file containing a matrix of values (no header), computes
+# the mean across the columns. Requires R.
+colmean () {
+    local v=($( Rscript -e "cat(apply(read.table('$1',header=F),2,mean))" ))
+    echo ${v[@]}
+}
+
+# rowmean
+# taskes as input a file containing a matrix of values (no header), computes
+# the mean across the rows. Requires R.
+rowmean () {
+    local v=($( Rscript -e "cat(apply(read.table('$1',header=F),1,mean))" ))
+    echo ${v[@]}
+}
+

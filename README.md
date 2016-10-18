@@ -68,6 +68,17 @@ revnumsort 5 2 6 9  # 9 6 2 5
 power 3 4  # 81
 ```
 
+* `rowmean`, `colmean` compute the mean over the rows and columns
+(respectively) of a matrix given via an input file
+(in space-separated values format, no header). Both require R.
+```
+echo -e "1 2 3 4 5\n6 7 8 9 10" > table.txt
+rowmean table.txt
+# 3 8
+colmean table.txt
+# 3.5 4.5 5.5 6.5 7.5
+```
+
 * `sqrt` computes the square root of a number
 ```
 sqrt 16    # 4
