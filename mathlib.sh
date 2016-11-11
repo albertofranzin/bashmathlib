@@ -6,7 +6,8 @@ if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
 DIR="$DIR/lib"
 . "$DIR/base.sh"
 . "$DIR/explog.sh"
+. "$DIR/matrix.sh"
+. "$DIR/stats.sh"
 . "$DIR/vectors.sh"
 . "$DIR/vecnum.sh"
-. "$DIR/stats.sh"
 

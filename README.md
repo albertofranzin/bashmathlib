@@ -12,6 +12,11 @@ Clone the repo, then in your bash script add
 source /path/to/bashmathlib/mathlib.sh
 ```
 
+Expressions can be combined using `$( ... )`:
+```
+sqrt $( mult $( divide 12 2 ) $( subtract 8 2 ) )   # 6
+```
+
 ###List of functions
 
 * `abs` computes the absolute value of a number.
@@ -27,6 +32,20 @@ sum 3 1.5       # 4.5
 subtract 3 1.5  # 1.5
 mult 3 1.5      # 4.5
 divide 3 1.5    # 2
+```
+
+* `apply` apply a function over the rows or the columns of a matrix.
+Arguments are the matrix, the dimension, the function, followed by
+optional arguments for the function. The output is an array.
+Works only on 2-d matrices stored in files, `1` means apply the
+function on the rows, `2` means to apply over the columns.
+Uses temporary files, so it is probably than other solutions.
+```
+echo -e "1 2 3 4 5\n6 7 8 9 10" > table.txt
+apply table.txt 1 avg
+# 3 8
+apply table.txt 2 avg
+# 3.5 4.5 5.5 6.5 7.5
 ```
 
 * `avg`, `average`, `mean` compute the average value in a list of numbers.
@@ -92,6 +111,17 @@ colmean table.txt
 * `sqrt` computes the square root of a number.
 ```
 sqrt 16    # 4
+```
+
+* `transpose` transposes a 2-d matrix stored in a file and saves the output
+in another file. Input and output files are the two arguments.
+```
+echo -e "1 2 3\n4 5 6" > table.txt
+transpose table.txt table_transposed.txt
+cat table_transposed.txt
+# 1 4
+# 2 5
+# 3 6
 ```
 
 * `vecsum`,`vecprod` compute respectively the sum and the product of
