@@ -28,7 +28,7 @@ abs -5.4   # 5.4
 product and division of two numbers. For vector sum and product use `vecsum`
 and `vecprod`.
 ```
-sum 3 1.5       # 4.5
+add 3 1.5       # 4.5
 subtract 3 1.5  # 1.5
 mult 3 1.5      # 4.5
 divide 3 1.5    # 2
