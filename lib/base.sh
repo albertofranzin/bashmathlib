@@ -33,6 +33,63 @@ divide () {
     awk -va=$1 -vb=$2 'BEGIN {print a/b}'
 }
 
+# compare two numbers. True if first value is strictly greater than the second one
+# greaterthan 3 2 # true
+greaterthan () {
+    local answer=""
+    local v=`awk -va=$1 -vb=$2 'BEGIN {if (a > b) {print "t"} else {print "f"}}'`
+    if [[ $v == 't' ]]; then
+        answer="1"
+    fi
+    echo $answer
+} 
+
+# compare two numbers. True if first value is greater greater or equal
+# than the second one
+# greaterequalthan 3 2 # true
+greaterequalthan () {
+    local answer=""
+    local v=`awk -va=$1 -vb=$2 'BEGIN {if (a >= b) {print "t"} else {print "f"}}'`
+    if [[ $v == 't' ]]; then
+        answer="1"
+    fi
+    echo $answer
+} 
+
+# compare two numbers. True if first value is strictly smaller than the second one
+# smallerthan 3 2 # true
+smallerthan () {
+    local answer=""
+    local v=`awk -va=$1 -vb=$2 'BEGIN {if (a < b) {print "t"} else {print "f"}}'`
+    if [[ $v == 't' ]]; then
+        answer="1"
+    fi
+    echo $answer
+} 
+
+# compare two numbers. True if first value is smaller or equal than the second one
+# smallerequalthan 3 2 # true
+smallerequalthan () {
+    local answer=""
+    local v=`awk -va=$1 -vb=$2 'BEGIN {if (a <= b) {print "t"} else {print "f"}}'`
+    if [[ $v == 't' ]]; then
+        answer="1"
+    fi
+    echo $answer
+} 
+
+# compare two numbers. True if the two values are equal
+# equalto 3 2 # true
+equalto () {
+    local answer=""
+    local v=`awk -va=$1 -vb=$2 'BEGIN {if (a == b) {print "t"} else {print "f"}}'`
+    if [[ $v == 't' ]]; then
+        answer="1"
+    fi
+    echo $answer
+} 
+
+
 
 ## tests: comment out when sourcing the scripts
 # abs 4

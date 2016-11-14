@@ -17,6 +17,9 @@ Expressions can be combined using `$( ... )`:
 sqrt $( mult $( divide 12 2 ) $( subtract 8 2 ) )   # 6
 ```
 
+You better include also the [util lib](https://github.com/albertofranzin/bashutillib)
+when using this one.
+
 ###List of functions
 
 * `abs` computes the absolute value of a number.
@@ -61,6 +64,17 @@ of a number.
 exp 1      # 2.71828
 exp2 1     # 2
 exp10 1    # 10
+```
+
+* `greaterthan`, `greaterequalthan`, `smallerthan`, `smallerequalthan`, `equalto`
+compare two given numbers. Output is `"1"` if the expression if true, and `""`
+(the empty string) otherwise.
+```
+greaterthan 1 4       # false
+greaterequalthan 1 4  # false
+smallerthan 1 4       # true
+smallerequalthan 1 4  # true
+equalto 4 4.0         # true
 ```
 
 * `len`, `length` length of a space-separated list of values.
