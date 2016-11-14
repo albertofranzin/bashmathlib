@@ -42,7 +42,7 @@ Arguments are the matrix, the dimension, the function, followed by
 optional arguments for the function. The output is an array.
 Works only on 2-d matrices stored in files, `1` means apply the
 function on the rows, `2` means to apply over the columns.
-Uses temporary files, so it is probably than other solutions.
+Uses temporary files, so it is probably much slower than other solutions.
 ```
 echo -e "1 2 3 4 5\n6 7 8 9 10" > table.txt
 apply table.txt 1 avg
