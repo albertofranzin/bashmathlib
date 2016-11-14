@@ -75,6 +75,12 @@ greaterequalthan 1 4  # false
 smallerthan 1 4       # true
 smallerequalthan 1 4  # true
 equalto 4 4.0         # true
+if [[ `greaterthan 3.4 1.3` ]]; then
+    echo "yes!"
+else
+    echo "no!"
+fi
+# yes!
 ```
 
 * `len`, `length` length of a space-separated list of values.
@@ -109,6 +115,16 @@ revnumsort 5 2 6 9  # 9 6 2 5
 * `power` computes the power of two given numbers.
 ```
 power 3 4  # 81
+```
+
+* `range` generates a range of values from start to end (included) with a
+given step.
+```
+range 1 10 1   # 1 2 3 4 5 6 7 8 9 10
+range 1 10 2   # 1 3 5 7 9
+range 10 1 -1  # 10 9 8 7 6 5 4 3 2 1
+range 10 1 -2  # 10 8 6 4 2
+range 1 2 0.1  # 1 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2
 ```
 
 * `rowmean`, `colmean` compute the mean over the rows and columns
