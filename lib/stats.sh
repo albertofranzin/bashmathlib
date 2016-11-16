@@ -20,10 +20,9 @@ max () {
     local v=($@)
     local m=${v[0]}
     for a in ${v[@]}; do
-        if (( a > m)); then m=$a; fi
+        if [[ `greaterthan $a $m` ]]; then m=$a; fi
     done
     echo $m
-
 }
 
 # min of a list of values
@@ -31,7 +30,7 @@ min () {
     local v=($@)
     local m=${v[0]}
     for a in ${v[@]}; do
-        if (( a < m )); then m=$a ; fi
+        if [[ `smallerthan $a $m` ]]; then m=$a ; fi
     done
     echo $m
 }
@@ -50,7 +49,7 @@ median () {
         local m=$( avg $vi $vj )
     else
         # odd
-        local i=$(( l / 2 ))
+        local i=$(( divide l 2 ))
         local m=${v[$i]}
     fi
     echo $m
