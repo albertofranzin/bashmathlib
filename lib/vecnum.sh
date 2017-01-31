@@ -18,16 +18,18 @@ vecprod () {
 }
 
 # sort a list of numbers
+# separator of decimal digits is '.'
 numsort () {
     local v=($@)
-    local a=("$( echo ${v[@]} | tr ' ' \\n | awk '{print $0}' | sort -n | tr \\n ' ' )")
+    local a=("$( echo ${v[@]} | tr ' ' \\n | awk '{print $0}' | LC_NUMERIC=us_EN.UTF-8 sort -n | tr \\n ' ' )")
     echo "${a[@]}"
 }
 
 # sort a list of numbers in decreasing order
+# separator of decimal digits is '.'
 revnumsort () {
     local v=($@)
-    local a=("$( echo ${v[@]} | tr ' ' \\n | awk '{print $0}' | sort -nr | tr \\n ' ' )")
+    local a=("$( echo ${v[@]} | tr ' ' \\n | awk '{print $0}' | LC_NUMERIC=us_EN.UTF-8 sort -nr | tr \\n ' ' )")
     echo "${a[@]}"
 }
 
