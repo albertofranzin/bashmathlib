@@ -74,3 +74,61 @@ range () {
 }
 
 #vecsum 2 3 4.6
+
+
+# pointwiseadd
+# takes in input a value and a vector, adds the value
+# to each element of the vector.
+pointwiseadd () {
+    local x=${1}
+    shift
+    local v=${@}
+    local s=""
+    for i in ${v} ; do
+        s="$s`add $i $x` "
+    done
+    echo "${s[@]}"
+}
+
+# pointwisesubtract
+# takes in input a value and a vector, subtracts the value
+# from each element of the vector.
+pointwisesubtract () {
+    local x=${1}
+    shift
+    local v=${@}
+    local s=""
+    for i in ${v} ; do
+        s="$s`subtract $i $x` "
+    done
+    echo "${s[@]}"
+}
+
+# pointwisemult
+# takes in input a value and a vector, multiplies the value
+# to each element of the vector.
+pointwisemult () {
+    local x=${1}
+    shift
+    local v=${@}
+    local s=""
+    for i in ${v} ; do
+        s="$s`mult $i $x` "
+    done
+    echo "${s[@]}"
+}
+
+# pointwisedivide
+# takes in input a value and a vector, divides 
+# each element of the vector by the value.
+pointwisedivide () {
+    local x=${1}
+    shift
+    local v=${@}
+    local s=""
+    for i in ${v} ; do
+        s="$s`divide $i $x` "
+    done
+    echo "${s[@]}"
+}
+

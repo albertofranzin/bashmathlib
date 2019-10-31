@@ -29,7 +29,8 @@ abs -5.4   # 5.4
 
 * `add`,`subtract`,`mult`,`divide` compute, respectively, the sum, subtraction,
 product and division of two numbers. For vector sum and product use `vecsum`
-and `vecprod`.
+and `vecprod`. To apply the operation to each element of a vector use
+`pointwise{add/subtract/mult/divide}`
 ```
 add 3 1.5       # 4.5
 subtract 3 1.5  # 1.5
@@ -110,6 +111,16 @@ order, respectively.
 ```
 numsort 5 2 6 9     # 2 5 6 9
 revnumsort 5 2 6 9  # 9 6 2 5
+```
+
+* `pointwiseadd`, `pointwisesubtract`, `pointwisemult`, `pointwisedivide` apply
+an operation to each element of a vector. The value to be
+added/subtracted/multiplied/divided is the first parameter.
+```
+pointwiseadd 1.5 1 2 3        # 2.5 3.5 4.5
+pointwisesubtract 1.5 1 2 3   # -0.5 0.5 1.5
+pointwisemult 1.5 1 2 3       # 1.5 3 4.5
+pointwisedivide 1.5 1 2 3     # 0.666667 1.33333 2
 ```
 
 * `power` computes the power of two given numbers.
