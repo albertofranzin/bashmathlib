@@ -79,3 +79,26 @@ rpd () {
     local b=${2}
     awk -va=$a -vb=$b 'BEGIN {print (a-b)/b * 100}' /dev/null
 }
+
+# variance
+# takes in input an array of values, computes the variance.
+variance () {
+    local v=($@)
+    local l=$( len ${v[@]} )
+    local a=$( avg ${v[@]} )
+    local ll=$( pointwisesubtract $a ${v[@]} )
+    local d=""
+    for i in ${ll[@]} ; do
+       d="$d`mult $i $i` "
+    done
+    local res=$( divide $( vecsum ${d[@]} ) $( subtract $l 1 ) )
+    echo $res
+}
+
+# stddev
+# takes in input an array of values, computes the standard deviation.
+stddev () {
+    local v=$( variance ${@} )
+    local vv=$( sqrt $v )
+    echo $vv
+}

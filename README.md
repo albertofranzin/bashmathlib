@@ -159,6 +159,11 @@ rpd 10500 10000   # 5
 sqrt 16    # 4
 ```
 
+* `stddev` compute the standard deviation of a list of values.
+```
+stddev 1 2 3 4 5 6 7 8 9 10   # 3.02765
+```
+
 * `transpose` transposes a 2-d matrix stored in a file and saves the output
 in another file. Input and output files are the two arguments.
 ```
@@ -168,6 +173,11 @@ cat table_transposed.txt
 # 1 4
 # 2 5
 # 3 6
+```
+
+* `variance` compute the variance of a list of values.
+```
+variance 1 2 3 4 5 6 7 8 9 10    # 9.16667
 ```
 
 * `vecsum`,`vecprod` compute respectively the sum and the product of
