@@ -138,6 +138,11 @@ colmean table.txt
 # 3.5 4.5 5.5 6.5 7.5
 ```
 
+* `rpd` compute the relative percentage deviation of two values `a` and `b`.
+```
+rpd 10500 10000   # 5
+```
+
 * `sqrt` computes the square root of a number.
 ```
 sqrt 16    # 4

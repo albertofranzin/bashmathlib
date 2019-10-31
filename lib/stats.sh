@@ -56,7 +56,7 @@ median () {
 }
 
 # colmean
-# taskes as input a file containing a matrix of values (no header), computes
+# takes as input a file containing a matrix of values (no header), computes
 # the mean across the columns. Requires R.
 colmean () {
     local v=($( Rscript -e "cat(apply(read.table('$1',header=F),2,mean))" ))
@@ -64,10 +64,18 @@ colmean () {
 }
 
 # rowmean
-# taskes as input a file containing a matrix of values (no header), computes
+# takes as input a file containing a matrix of values (no header), computes
 # the mean across the rows. Requires R.
 rowmean () {
     local v=($( Rscript -e "cat(apply(read.table('$1',header=F),1,mean))" ))
     echo ${v[@]}
 }
 
+# rpd
+# takes in input two values a and b, compute the
+# relative percentage deviation (a-b)/b * 100.
+rpd () {
+    local a=${1}
+    local b=${2}
+    awk -va=$a -vb=$b 'BEGIN {print (a-b)/b * 100}' /dev/null
+}
